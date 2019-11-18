@@ -7,27 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		436203CE2380A45B00FE266B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436203CD2380A45B00FE266B /* Photo.swift */; };
+		436203D02380A58800FE266B /* RoverPhotoJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436203CF2380A58800FE266B /* RoverPhotoJsonParser.swift */; };
+		4375A1682380BFB4000AFBCD /* ImageListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375A1672380BFB4000AFBCD /* ImageListCollectionViewCell.swift */; };
+		4375A16C2380DC7F000AFBCD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375A16B2380DC7F000AFBCD /* ReusableView.swift */; };
+		4375A16E2380EEE4000AFBCD /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4375A16D2380EEE4000AFBCD /* UIImage+Resize.swift */; };
 		438765C323808B9B009100C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765C223808B9B009100C8 /* AppDelegate.swift */; };
 		438765C523808B9B009100C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765C423808B9B009100C8 /* SceneDelegate.swift */; };
-		438765C723808B9B009100C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765C623808B9B009100C8 /* ViewController.swift */; };
-		438765CA23808B9B009100C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438765C823808B9B009100C8 /* Main.storyboard */; };
+		438765C723808B9B009100C8 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765C623808B9B009100C8 /* ImageListViewController.swift */; };
 		438765CC23808B9C009100C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438765CB23808B9C009100C8 /* Assets.xcassets */; };
 		438765CF23808B9C009100C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438765CD23808B9C009100C8 /* LaunchScreen.storyboard */; };
+		438765D723808CC5009100C8 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765D623808CC5009100C8 /* ImageListViewModel.swift */; };
+		438765DA23808D2F009100C8 /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765D923808D2F009100C8 /* ImageListView.swift */; };
+		438765DC23808E40009100C8 /* RoverPhotosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438765DB23808E40009100C8 /* RoverPhotosApi.swift */; };
+		439253F72381F5100049F7A6 /* ImageListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439253F62381F5100049F7A6 /* ImageListViewModelTests.swift */; };
+		439253FF2381F5EB0049F7A6 /* RoverPhotosApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439253FE2381F5EB0049F7A6 /* RoverPhotosApiMock.swift */; };
+		439254012381F67D0049F7A6 /* ImageDownloaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439254002381F67D0049F7A6 /* ImageDownloaderMock.swift */; };
+		439254042381F8910049F7A6 /* ImageListViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439254032381F8910049F7A6 /* ImageListViewModelDelegateMock.swift */; };
+		439254062381FC050049F7A6 /* OperationQueueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439254052381FC050049F7A6 /* OperationQueueMock.swift */; };
+		439254082381FE4E0049F7A6 /* RoverPhotoJsonParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439254072381FE4E0049F7A6 /* RoverPhotoJsonParserTests.swift */; };
+		4392540A2381FE720049F7A6 /* UrlDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439254092381FE720049F7A6 /* UrlDataDownloader.swift */; };
+		43ACB6AD2381122800D9F09E /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB6AC2381122800D9F09E /* ImageDetailViewController.swift */; };
+		43ACB6B0238114E800D9F09E /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB6AF238114E800D9F09E /* ImageDownloadOperation.swift */; };
+		43ACB6B22381CE4900D9F09E /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB6B12381CE4900D9F09E /* ImageDetailView.swift */; };
+		43ACB6B42381CEBD00D9F09E /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB6B32381CEBD00D9F09E /* ImageDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		439253F92381F5100049F7A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 438765B723808B9B009100C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 438765BE23808B9B009100C8;
+			remoteInfo = MarsImages;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		436203CD2380A45B00FE266B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		436203CF2380A58800FE266B /* RoverPhotoJsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoJsonParser.swift; sourceTree = "<group>"; };
+		4375A1672380BFB4000AFBCD /* ImageListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCollectionViewCell.swift; sourceTree = "<group>"; };
+		4375A16B2380DC7F000AFBCD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		4375A16D2380EEE4000AFBCD /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		438765BF23808B9B009100C8 /* MarsImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438765C223808B9B009100C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438765C423808B9B009100C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		438765C623808B9B009100C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		438765C923808B9B009100C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		438765C623808B9B009100C8 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		438765CB23808B9C009100C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		438765CE23808B9C009100C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		438765D023808B9C009100C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438765D623808CC5009100C8 /* ImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
+		438765D923808D2F009100C8 /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
+		438765DB23808E40009100C8 /* RoverPhotosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotosApi.swift; sourceTree = "<group>"; };
+		439253F42381F5100049F7A6 /* MarsImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		439253F62381F5100049F7A6 /* ImageListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModelTests.swift; sourceTree = "<group>"; };
+		439253F82381F5100049F7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439253FE2381F5EB0049F7A6 /* RoverPhotosApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotosApiMock.swift; sourceTree = "<group>"; };
+		439254002381F67D0049F7A6 /* ImageDownloaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderMock.swift; sourceTree = "<group>"; };
+		439254032381F8910049F7A6 /* ImageListViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		439254052381FC050049F7A6 /* OperationQueueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueMock.swift; sourceTree = "<group>"; };
+		439254072381FE4E0049F7A6 /* RoverPhotoJsonParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoJsonParserTests.swift; sourceTree = "<group>"; };
+		439254092381FE720049F7A6 /* UrlDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDataDownloader.swift; sourceTree = "<group>"; };
+		43ACB6AC2381122800D9F09E /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		43ACB6AF238114E800D9F09E /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
+		43ACB6B12381CE4900D9F09E /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		43ACB6B32381CEBD00D9F09E /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		438765BC23808B9B009100C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439253F12381F5100049F7A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				438765C123808B9B009100C8 /* MarsImages */,
+				439253F52381F5100049F7A6 /* MarsImagesTests */,
 				438765C023808B9B009100C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				438765BF23808B9B009100C8 /* MarsImages.app */,
+				439253F42381F5100049F7A6 /* MarsImagesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +115,79 @@
 			children = (
 				438765C223808B9B009100C8 /* AppDelegate.swift */,
 				438765C423808B9B009100C8 /* SceneDelegate.swift */,
-				438765C623808B9B009100C8 /* ViewController.swift */,
-				438765C823808B9B009100C8 /* Main.storyboard */,
+				43D23F722381EF0600E9B845 /* Model */,
+				43D23F712381EB0700E9B845 /* Utility */,
+				438765D823808D1E009100C8 /* Image List */,
+				43ACB6AE2381122F00D9F09E /* Image Detail */,
 				438765CB23808B9C009100C8 /* Assets.xcassets */,
 				438765CD23808B9C009100C8 /* LaunchScreen.storyboard */,
 				438765D023808B9C009100C8 /* Info.plist */,
 			);
 			path = MarsImages;
+			sourceTree = "<group>";
+		};
+		438765D823808D1E009100C8 /* Image List */ = {
+			isa = PBXGroup;
+			children = (
+				438765D623808CC5009100C8 /* ImageListViewModel.swift */,
+				438765C623808B9B009100C8 /* ImageListViewController.swift */,
+				438765D923808D2F009100C8 /* ImageListView.swift */,
+				4375A1672380BFB4000AFBCD /* ImageListCollectionViewCell.swift */,
+			);
+			path = "Image List";
+			sourceTree = "<group>";
+		};
+		439253F52381F5100049F7A6 /* MarsImagesTests */ = {
+			isa = PBXGroup;
+			children = (
+				439253F62381F5100049F7A6 /* ImageListViewModelTests.swift */,
+				439254072381FE4E0049F7A6 /* RoverPhotoJsonParserTests.swift */,
+				439254022381F72D0049F7A6 /* Mocks */,
+				439253F82381F5100049F7A6 /* Info.plist */,
+			);
+			path = MarsImagesTests;
+			sourceTree = "<group>";
+		};
+		439254022381F72D0049F7A6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				439254002381F67D0049F7A6 /* ImageDownloaderMock.swift */,
+				439254032381F8910049F7A6 /* ImageListViewModelDelegateMock.swift */,
+				439253FE2381F5EB0049F7A6 /* RoverPhotosApiMock.swift */,
+				439254052381FC050049F7A6 /* OperationQueueMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		43ACB6AE2381122F00D9F09E /* Image Detail */ = {
+			isa = PBXGroup;
+			children = (
+				43ACB6B32381CEBD00D9F09E /* ImageDetailViewModel.swift */,
+				43ACB6AC2381122800D9F09E /* ImageDetailViewController.swift */,
+				43ACB6B12381CE4900D9F09E /* ImageDetailView.swift */,
+			);
+			path = "Image Detail";
+			sourceTree = "<group>";
+		};
+		43D23F712381EB0700E9B845 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				439254092381FE720049F7A6 /* UrlDataDownloader.swift */,
+				43ACB6AF238114E800D9F09E /* ImageDownloadOperation.swift */,
+				436203CF2380A58800FE266B /* RoverPhotoJsonParser.swift */,
+				4375A16B2380DC7F000AFBCD /* ReusableView.swift */,
+				4375A16D2380EEE4000AFBCD /* UIImage+Resize.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		43D23F722381EF0600E9B845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				438765DB23808E40009100C8 /* RoverPhotosApi.swift */,
+				436203CD2380A45B00FE266B /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +210,24 @@
 			productReference = 438765BF23808B9B009100C8 /* MarsImages.app */;
 			productType = "com.apple.product-type.application";
 		};
+		439253F32381F5100049F7A6 /* MarsImagesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 439253FD2381F5100049F7A6 /* Build configuration list for PBXNativeTarget "MarsImagesTests" */;
+			buildPhases = (
+				439253F02381F5100049F7A6 /* Sources */,
+				439253F12381F5100049F7A6 /* Frameworks */,
+				439253F22381F5100049F7A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				439253FA2381F5100049F7A6 /* PBXTargetDependency */,
+			);
+			name = MarsImagesTests;
+			productName = MarsImagesTests;
+			productReference = 439253F42381F5100049F7A6 /* MarsImagesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +240,10 @@
 				TargetAttributes = {
 					438765BE23808B9B009100C8 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					439253F32381F5100049F7A6 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 438765BE23808B9B009100C8;
 					};
 				};
 			};
@@ -116,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				438765BE23808B9B009100C8 /* MarsImages */,
+				439253F32381F5100049F7A6 /* MarsImagesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +273,13 @@
 			files = (
 				438765CF23808B9C009100C8 /* LaunchScreen.storyboard in Resources */,
 				438765CC23808B9C009100C8 /* Assets.xcassets in Resources */,
-				438765CA23808B9B009100C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439253F22381F5100049F7A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +290,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				438765C723808B9B009100C8 /* ViewController.swift in Sources */,
+				4392540A2381FE720049F7A6 /* UrlDataDownloader.swift in Sources */,
+				438765C723808B9B009100C8 /* ImageListViewController.swift in Sources */,
+				43ACB6AD2381122800D9F09E /* ImageDetailViewController.swift in Sources */,
 				438765C323808B9B009100C8 /* AppDelegate.swift in Sources */,
+				438765D723808CC5009100C8 /* ImageListViewModel.swift in Sources */,
+				438765DA23808D2F009100C8 /* ImageListView.swift in Sources */,
+				43ACB6B0238114E800D9F09E /* ImageDownloadOperation.swift in Sources */,
+				4375A16C2380DC7F000AFBCD /* ReusableView.swift in Sources */,
+				43ACB6B42381CEBD00D9F09E /* ImageDetailViewModel.swift in Sources */,
+				4375A16E2380EEE4000AFBCD /* UIImage+Resize.swift in Sources */,
+				436203D02380A58800FE266B /* RoverPhotoJsonParser.swift in Sources */,
+				436203CE2380A45B00FE266B /* Photo.swift in Sources */,
+				4375A1682380BFB4000AFBCD /* ImageListCollectionViewCell.swift in Sources */,
+				438765DC23808E40009100C8 /* RoverPhotosApi.swift in Sources */,
 				438765C523808B9B009100C8 /* SceneDelegate.swift in Sources */,
+				43ACB6B22381CE4900D9F09E /* ImageDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439253F02381F5100049F7A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439254012381F67D0049F7A6 /* ImageDownloaderMock.swift in Sources */,
+				439253FF2381F5EB0049F7A6 /* RoverPhotosApiMock.swift in Sources */,
+				439254082381FE4E0049F7A6 /* RoverPhotoJsonParserTests.swift in Sources */,
+				439253F72381F5100049F7A6 /* ImageListViewModelTests.swift in Sources */,
+				439254042381F8910049F7A6 /* ImageListViewModelDelegateMock.swift in Sources */,
+				439254062381FC050049F7A6 /* OperationQueueMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		438765C823808B9B009100C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				438765C923808B9B009100C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		439253FA2381F5100049F7A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 438765BE23808B9B009100C8 /* MarsImages */;
+			targetProxy = 439253F92381F5100049F7A6 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		438765CD23808B9C009100C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -316,6 +494,46 @@
 			};
 			name = Release;
 		};
+		439253FB2381F5100049F7A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU643WSPQQ;
+				INFOPLIST_FILE = MarsImagesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jnagel.MarsImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarsImages.app/MarsImages";
+			};
+			name = Debug;
+		};
+		439253FC2381F5100049F7A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU643WSPQQ;
+				INFOPLIST_FILE = MarsImagesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jnagel.MarsImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarsImages.app/MarsImages";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -333,6 +551,15 @@
 			buildConfigurations = (
 				438765D423808B9C009100C8 /* Debug */,
 				438765D523808B9C009100C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		439253FD2381F5100049F7A6 /* Build configuration list for PBXNativeTarget "MarsImagesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439253FB2381F5100049F7A6 /* Debug */,
+				439253FC2381F5100049F7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
