@@ -49,6 +49,8 @@
 		4397B013238370E700CDC8D2 /* PhotoDetailsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397B012238370E700CDC8D2 /* PhotoDetailsViewMock.swift */; };
 		4397B0152383726900CDC8D2 /* RoverPhotosApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397B0142383726900CDC8D2 /* RoverPhotosApiTests.swift */; };
 		43ACB6B0238114E800D9F09E /* ImageDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACB6AF238114E800D9F09E /* ImageDownloadOperation.swift */; };
+		43F1C64223837DFE00ACC176 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1C64123837DFE00ACC176 /* URLSessionMock.swift */; };
+		43F1C64423837F1400ACC176 /* UrlDataDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1C64323837F1400ACC176 /* UrlDataDownloaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		4397B012238370E700CDC8D2 /* PhotoDetailsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewMock.swift; sourceTree = "<group>"; };
 		4397B0142383726900CDC8D2 /* RoverPhotosApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotosApiTests.swift; sourceTree = "<group>"; };
 		43ACB6AF238114E800D9F09E /* ImageDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperation.swift; sourceTree = "<group>"; };
+		43F1C64123837DFE00ACC176 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		43F1C64323837F1400ACC176 /* UrlDataDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDataDownloaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4397B0142383726900CDC8D2 /* RoverPhotosApiTests.swift */,
+				43F1C64323837F1400ACC176 /* UrlDataDownloaderTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				431B4F0B2383734A003EE56D /* RoverPhotoJsonParserMock.swift */,
 				439253FE2381F5EB0049F7A6 /* RoverPhotosApiMock.swift */,
 				439254052381FC050049F7A6 /* OperationQueueMock.swift */,
+				43F1C64123837DFE00ACC176 /* URLSessionMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -447,8 +453,10 @@
 				4397AFFF2383689B00CDC8D2 /* PhotoListInputMock.swift in Sources */,
 				4397B0152383726900CDC8D2 /* RoverPhotosApiTests.swift in Sources */,
 				4397AFF52383601D00CDC8D2 /* PhotoListOutputMock.swift in Sources */,
+				43F1C64423837F1400ACC176 /* UrlDataDownloaderTests.swift in Sources */,
 				4397B00723836DD700CDC8D2 /* PhotoDetailsInteractorTests.swift in Sources */,
 				4397B013238370E700CDC8D2 /* PhotoDetailsViewMock.swift in Sources */,
+				43F1C64223837DFE00ACC176 /* URLSessionMock.swift in Sources */,
 				4397AFFD238367EB00CDC8D2 /* PhotoListPresenterTests.swift in Sources */,
 				4397AFF323835FAA00CDC8D2 /* PhotoListInteractorTests.swift in Sources */,
 				431B4F0C2383734A003EE56D /* RoverPhotoJsonParserMock.swift in Sources */,

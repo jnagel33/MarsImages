@@ -42,7 +42,6 @@ final class PhotoListInteractor: PhotoListInput {
     func fetchInitialPhotos() {
         isFetchingPhotos = true
         
-        print("MyDebug: Fetching page: \(nextPage)")
         api.fetchPhotos(page: nextPage) { [weak self] result in
             switch result {
             case .success(let photos):
@@ -67,7 +66,6 @@ final class PhotoListInteractor: PhotoListInput {
             return
         }
         
-        print("MyDebug: Fetching next page: \(nextPage)")
         isFetchingPhotos = true
         api.fetchPhotos(page: nextPage) { [weak self] result in
             defer {

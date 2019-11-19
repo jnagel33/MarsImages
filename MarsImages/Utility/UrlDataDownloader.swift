@@ -14,6 +14,13 @@ enum UrlDataDownloaderError: Error, Equatable {
     case noDataReturned
     case serverError
     
+    var isFetchError: Bool {
+        if case .fetchError = self {
+            return true
+        }
+        return false
+    }
+    
     static func == (lhs: UrlDataDownloaderError, rhs: UrlDataDownloaderError) -> Bool {
         switch (lhs, rhs) {
         case (.invalidUrl, .invalidUrl): return true
