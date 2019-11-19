@@ -1,56 +1,34 @@
 //
-//  ImageListViewModel.swift
+//  PhotoListInteractor.swift
 //  MarsImages
 //
-//  Created by Josh Nagel on 11/16/19.
+//  Created by Josh Nagel on 11/17/19.
 //  Copyright © 2019 jnagel. All rights reserved.
 //
 
 import Foundation
 
-protocol ImageListViewModel: class {
-    var title: String { get }
-    var photos: [Photo] { get }
-    var hasFetchedAllPhotos: Bool { get }
-    var delegate: ImageListViewModelDelegate?  { get set }
+final class PhotoListInteractor: PhotoListInput {
     
-    func fetchInitialPhotos()
-    func fetchMorePhotos()
-    func downloadImage(for photo: Photo)
-}
-
-protocol ImageListViewModelDelegate: class {
-    func photosListDidChange()
-    func failedToFetchPhotos(with error: Error)
-    func didLoadImage(atIndex index: Int)
-    func didFailToLoadImage(atIndex index: Int, with error: Error)
-}
-
-final class ImageListViewModelImpl: ImageListViewModel {
+    weak var output: PhotoListOutput?
     
     private let api: RoverPhotosApi
     private let urlDataDownloader: UrlDataDownloader
-    private var nextPage: UInt = 1
     private let imageDownloadQueue: OperationQueue
     
+    private var nextPage: UInt = 1
     private var isFetchingPhotos = false
-    
-    let title: String = "Image List"
-    var hasFetchedAllPhotos = false
-    
     private let photosSerialQueue = DispatchQueue(label: "ImageListViewModel:photos:serial", qos: .userInteractive)
-    var photos: [Photo] = [] {
+
+    private var photos: [Photo] = [] {
         didSet {
-            delegate?.photosListDidChange()
+            output?.didUpdateList(photos: photos)
         }
     }
-    
-    weak var delegate: ImageListViewModelDelegate?
     
     init(api: RoverPhotosApi = RoverPhotosApiImpl(),
          urlDataDownloader: UrlDataDownloader = UrlDataDownloaderImpl(),
          imageDownloadQueue: OperationQueue = OperationQueue()) {
-        
         self.api = api
         self.urlDataDownloader = urlDataDownloader
         self.imageDownloadQueue = imageDownloadQueue
@@ -58,6 +36,8 @@ final class ImageListViewModelImpl: ImageListViewModel {
         imageDownloadQueue.qualityOfService = .utility
         imageDownloadQueue.maxConcurrentOperationCount = 10
     }
+    
+    // MARK: - PhotoListInput
     
     func fetchInitialPhotos() {
         isFetchingPhotos = true
@@ -77,7 +57,7 @@ final class ImageListViewModelImpl: ImageListViewModel {
                 
             case .failure(let error):
                 self?.isFetchingPhotos = false
-                self?.delegate?.failedToFetchPhotos(with: error)
+                self?.output?.didFailToFetchPhotos(with: error)
             }
         }
     }
@@ -96,18 +76,17 @@ final class ImageListViewModelImpl: ImageListViewModel {
             
             switch result {
             case .success(let photos):
-                self?.photosSerialQueue.sync { [weak self] in
-                    self?.photos += photos
-                }
-                
                 if photos.count == 0 {
-                    self?.hasFetchedAllPhotos = true
+                    self?.output?.didReachEndOfPhotos()
                 } else {
+                    self?.photosSerialQueue.sync { [weak self] in
+                        self?.photos += photos
+                    }
                     self?.nextPage += 1
                 }
                 
             case .failure(let error):
-                self?.delegate?.failedToFetchPhotos(with: error)
+                self?.output?.didFailToFetchPhotos(with: error)
             }
         }
     }
@@ -121,7 +100,8 @@ final class ImageListViewModelImpl: ImageListViewModel {
         let downloadOp = ImageDownloadOperation(photo: photo, urlDataDownloader: urlDataDownloader)
         
         let completionBlock = { [weak self] in
-            guard let self = self, let result = downloadOp.result else {
+            guard let self = self, downloadOp.result != nil else {
+                // Ignore if no result
                 return
             }
             
@@ -129,13 +109,7 @@ final class ImageListViewModelImpl: ImageListViewModel {
                 guard let index = self.photos.firstIndex(where: { $0.id == photo.id }) else {
                     return
                 }
-                
-                switch result {
-                case .success:
-                    self.delegate?.didLoadImage(atIndex: index)
-                case .failure(let error):
-                    self.delegate?.didFailToLoadImage(atIndex: index, with: error)
-                }
+                self.output?.didFinishImageDownload(for: photo, at: index)
             }
         }
         downloadOp.completionBlock = completionBlock

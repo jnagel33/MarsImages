@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Photo {
+class Photo: Equatable {
+    
     let id: Int
     let url: String
     let date: Date
@@ -26,16 +27,26 @@ class Photo {
         self.camera = camera
         self.rover = rover
     }
+    
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.url == rhs.url &&
+            lhs.date == rhs.date &&
+            lhs.camera == rhs.camera &&
+            lhs.rover == rhs.rover &&
+            lhs.imageData == rhs.imageData &&
+            lhs.thumbnailData == rhs.thumbnailData
+    }
 }
 
-struct Camera {
+struct Camera: Equatable {
     let id: Int
     let shortName: String
     let fullName: String
     let roverId: Int
 }
 
-struct Rover {
+struct Rover: Equatable {
     let id: Int
     let name: String
     let status: String

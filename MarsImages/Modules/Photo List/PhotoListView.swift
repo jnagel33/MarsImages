@@ -1,14 +1,14 @@
 //
-//  ImageListView.swift
+//  PhotoListView.swift
 //  MarsImages
 //
-//  Created by Josh Nagel on 11/16/19.
+//  Created by Josh Nagel on 11/17/19.
 //  Copyright © 2019 jnagel. All rights reserved.
 //
 
 import UIKit
 
-final class ImageListView: UIView {
+final class PhotoListCustomView: UIView {
     
     struct Constants {
         static let cellSize = CGSize(width: 125, height: 125)
@@ -16,9 +16,9 @@ final class ImageListView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = ImageListView.Constants.cellSize
+        layout.itemSize = PhotoListCustomView.Constants.cellSize
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ImageListCollectionViewCell.self)
+        collectionView.register(PhotoListCollectionViewCell.self)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         return collectionView

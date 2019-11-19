@@ -1,5 +1,5 @@
 //
-//  ImageListCollectionViewCell.swift
+//  PhotoListCollectionViewCell.swift
 //  MarsImages
 //
 //  Created by Josh Nagel on 11/16/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageListCollectionViewCell: UICollectionViewCell {
+class PhotoListCollectionViewCell: UICollectionViewCell {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()

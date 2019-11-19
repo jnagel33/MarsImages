@@ -15,6 +15,11 @@ enum RoverPhotosAPIError: Error, Equatable {
     static func == (lhs: RoverPhotosAPIError, rhs: RoverPhotosAPIError) -> Bool {
         switch (lhs, rhs) {
         case (.fetchError(let a), .fetchError(let b)): return a == b
+        case (.jsonParseError(let a), .jsonParseError(let b)):
+            guard let a1 = a as? RoverPhotoJsonParserError, let b1 = b as? RoverPhotoJsonParserError else {
+                return false
+            }
+            return a1 == b1
         default: return false
         }
     }

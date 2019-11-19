@@ -1,5 +1,5 @@
 //
-//  ImageDetailView.swift
+//  PhotoDetailView.swift
 //  MarsImages
 //
 //  Created by Josh Nagel on 11/17/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ImageDetailView: UIView {
+final class PhotoDetailView: UIView {
     
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -101,12 +101,12 @@ final class ImageDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func populate(image: UIImage?, formattedDate: String, cameraName: String, roverName: String, roverStatus: String) {
-        self.imageView.image = image
-        self.dateLabel.text = dateLabelPrefix + formattedDate
-        self.cameraNameLabel.text = cameraNameLabelPrefix + cameraName
-        self.roverNameLabel.text = roverNameLabelPrefix + roverName
-        self.roverStatusLabel.text = roverStatusLabelPrefix + roverStatus
+    func populate(details: PhotoDetails) {
+        self.imageView.image = details.imageData.flatMap { UIImage(data: $0) }
+        self.dateLabel.text = dateLabelPrefix + details.formattedDate
+        self.cameraNameLabel.text = cameraNameLabelPrefix + details.cameraName
+        self.roverNameLabel.text = roverNameLabelPrefix + details.roverName
+        self.roverStatusLabel.text = roverStatusLabelPrefix + details.roverStatus
     }
     
     // MARK: - Private
