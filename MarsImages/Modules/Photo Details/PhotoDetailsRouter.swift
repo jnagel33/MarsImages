@@ -10,7 +10,7 @@ import UIKit
 
 final class PhotoDetailsRouter: PhotoDetailsWireframe {
     
-    private let viewController: UIViewController
+    private weak var viewController: UIViewController?
     
     init(withViewController viewController: UIViewController) {
         self.viewController = viewController
@@ -30,7 +30,7 @@ final class PhotoDetailsRouter: PhotoDetailsWireframe {
     
     func dismiss() {
         DispatchQueue.main.async { [weak self] in
-            self?.viewController.dismiss(animated: true, completion: nil)
+            self?.viewController?.dismiss(animated: true, completion: nil)
         }
     }
 }

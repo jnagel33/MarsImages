@@ -10,7 +10,7 @@ import UIKit
 
 final class PhotoListRouter: PhotoListWireframe {
     
-    private let viewController: UIViewController
+    private weak var viewController: UIViewController?
     
     init(withViewController viewController: UIViewController) {
         self.viewController = viewController
@@ -32,13 +32,13 @@ final class PhotoListRouter: PhotoListWireframe {
         DispatchQueue.main.async { [viewController] in
             let photoDetailsViewController = PhotoDetailsRouter.resolveModule(with: photo)
             let navigationController = UINavigationController(rootViewController: photoDetailsViewController)
-            viewController.present(navigationController, animated: true, completion: nil)
+            viewController?.present(navigationController, animated: true, completion: nil)
         }
     }
     
     func showFailedToFetchPhotosAlert(with description: String) {
         DispatchQueue.main.async { [viewController] in
-            guard viewController.presentedViewController == nil else {
+            guard let viewController = viewController, viewController.presentedViewController == nil else {
                 return
             }
             
