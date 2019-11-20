@@ -10,7 +10,7 @@ import UIKit
 
 final class PhotoDetailView: UIView {
     
-    private lazy var mainStackView: UIStackView = {
+    private let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -19,14 +19,14 @@ final class PhotoDetailView: UIView {
         return stackView
     }()
     
-    private lazy var imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private lazy var detailStackView: UIStackView = {
+    private let detailStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -36,13 +36,13 @@ final class PhotoDetailView: UIView {
     }()
 
     private let dateLabelPrefix = "Date Taken: "
-    private lazy var dateLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var cameraHeaderLabel: UILabel = {
+    private let cameraHeaderLabel: UILabel = {
         let label = UILabel()
         label.text = "Camera:"
         label.font = .boldSystemFont(ofSize: 18)
@@ -51,13 +51,13 @@ final class PhotoDetailView: UIView {
     }()
     
     private let cameraNameLabelPrefix = "Name: "
-    private lazy var cameraNameLabel: UILabel = {
+    private let cameraNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var roverHeaderLabel: UILabel = {
+    private let roverHeaderLabel: UILabel = {
         let label = UILabel()
         label.text = "Rover:"
         label.font = .boldSystemFont(ofSize: 18)
@@ -66,14 +66,14 @@ final class PhotoDetailView: UIView {
     }()
     
     private let roverNameLabelPrefix = "Name: "
-    private lazy var roverNameLabel: UILabel = {
+    private let roverNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let roverStatusLabelPrefix = "Status: "
-    private lazy var roverStatusLabel: UILabel = {
+    private let roverStatusLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

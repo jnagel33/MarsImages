@@ -10,14 +10,14 @@ import UIKit
 
 class PhotoListCollectionViewCell: UICollectionViewCell {
     
-    private lazy var imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private lazy var loader: UIActivityIndicatorView = {
+    private let loader: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView(style: .medium)
         loader.hidesWhenStopped = true
         loader.isHidden = true

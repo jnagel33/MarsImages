@@ -14,7 +14,7 @@ final class PhotoListCustomView: UIView {
         static let cellSize = CGSize(width: 125, height: 125)
     }
     
-    lazy var collectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = PhotoListCustomView.Constants.cellSize
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
